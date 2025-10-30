@@ -1,0 +1,773 @@
+/* Definição das Cores Base */
+:root {
+    --roxo-principal: #5e0094;
+    /* Roxo mais escuro do logo */
+    --roxo-secundario: #8A2BE2;
+    /* Roxo para detalhes */
+    --laranja-destaque: #ff6a00;
+    /* Laranja do logo */
+    --branco: #ffffff;
+    --preto: #1a1a1a;
+    --cinza-claro: #f4f4f4;
+    --cinza-texto: #555555;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--cinza-texto);
+    background-color: var(--branco);
+
+    & .headline {
+        font-size: 60px;
+    }
+
+    & .header {
+        background-color: #820B99;
+    }
+}
+
+/* Utilitários */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    & img {
+        width: 300px;
+    }
+}
+
+/* Tipografia */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    color: var(--roxo-principal);
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 0.3em;
+}
+
+.section-title.white {
+    color: var(--branco);
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    font-size: 1.1em;
+    color: var(--cinza-texto);
+}
+
+.section.processo .section-subtitle {
+    color: var(--cinza-claro);
+}
+
+
+/* Botões (Chamadas para Ação) */
+.btn-cta {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cta.primary {
+    background-color: var(--laranja-destaque);
+    color: var(--branco);
+    border: 2px solid var(--laranja-destaque);
+}
+
+.btn-cta.primary:hover {
+    background-color: var(--roxo-principal);
+    border-color: var(--roxo-principal);
+}
+
+.btn-cta.secondary {
+    background-color: transparent;
+    color: var(--roxo-principal);
+    border: 2px solid var(--roxo-principal);
+    box-shadow: none;
+}
+
+.btn-cta.secondary:hover {
+    background-color: var(--roxo-principal);
+    color: var(--branco);
+}
+
+.btn-cta-nav {
+    padding: 8px 20px !important;
+    background-color: var(--laranja-destaque);
+    color: var(--branco) !important;
+    border-radius: 4px;
+    margin-left: 10px;
+    box-shadow: none;
+}
+
+.btn-cta-nav:hover {
+    background-color: var(--roxo-principal);
+}
+
+
+/* 1. Cabeçalho/Navegação */
+.header {
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8em;
+    color: var(--roxo-principal);
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.nav ul li a:hover,
+.nav ul li a.active {
+    color: var(--laranja-destaque);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--roxo-principal);
+}
+
+/* 2. Seção Hero */
+.hero {
+    background-color: var(--roxo-principal);
+    color: var(--branco);
+    padding: 100px 0;
+    text-align: left;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(135deg, rgba(255, 106, 0, 0.1) 0%, transparent 50%), var(--roxo-principal);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.headline {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--branco);
+    line-height: 1.1;
+}
+
+.subhead {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+
+/* 3. Seção Vantagens/Diferenciais (ESTILO BONITINHO) */
+.vantagens {
+    background-color: var(--branco);
+}
+
+.vantagens-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.vantagem-item {
+    padding: 40px 20px;
+    background-color: var(--cinza-claro);
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    border-bottom: 4px solid var(--laranja-destaque);
+}
+
+.vantagem-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    background-color: var(--branco);
+}
+
+.vantagem-item .icon {
+    font-size: 3.5em;
+    color: var(--roxo-principal);
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.vantagem-item:hover .icon {
+    color: var(--laranja-destaque);
+}
+
+.vantagem-item h3 {
+    color: var(--roxo-principal);
+}
+
+/* 4. Seção de Serviços */
+.servicos {
+    background-color: var(--cinza-claro);
+    text-align: center;
+}
+
+.servicos-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.servico-card {
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.servico-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.servico-card .icon {
+    font-size: 3em;
+    color: var(--laranja-destaque);
+    margin-bottom: 15px;
+}
+
+.servico-card h3 {
+    color: var(--roxo-principal);
+    margin-top: 0;
+}
+
+
+/* 5. Seção Processo (ESTILO BONITINHO) */
+.processo {
+    background-color: var(--roxo-principal);
+    color: var(--branco);
+}
+
+.processo .section-title {
+    color: var(--branco);
+}
+
+.processo-grid-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    border-left: 2px solid var(--laranja-destaque);
+    /* Linha vertical */
+    padding-left: 20px;
+}
+
+.processo-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.processo-num-container {
+    margin-left: -42px;
+    /* Puxa o número para fora da linha */
+    position: relative;
+    z-index: 10;
+    min-width: 50px;
+}
+
+.processo-num {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--branco);
+    background-color: var(--laranja-destaque);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--roxo-principal);
+    box-shadow: 0 0 0 5px var(--roxo-principal);
+}
+
+.processo-info {
+    margin-left: 20px;
+    padding-bottom: 15px;
+    padding-top: 5px;
+}
+
+.processo-info h3 {
+    color: var(--branco);
+    margin-top: 0;
+}
+
+.processo-info p {
+    color: var(--cinza-claro);
+}
+
+.processo-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+/* 6. Seção Portfólio (Chamada) */
+.portfolio-cta {
+    background-color: #820B99;
+    color: var(--branco);
+    text-align: center;
+    padding: 60px 0;
+}
+
+.portfolio-cta p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/* 7. Seção Clientes e Parceiros (na Home) */
+.clientes-home {
+    text-align: center;
+    background-color: var(--branco);
+}
+
+.client-partner-subtitle {
+    color: var(--roxo-principal);
+    margin-top: 40px;
+    font-size: 1.5em;
+}
+
+.clientes-home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.cliente-logo-home {
+    width: 100%;
+    max-width: 150px;
+    height: 80px;
+    background-color: var(--cinza-claro);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #999;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.cliente-logo-home:hover {
+    opacity: 1;
+}
+
+.clients-cta {
+    margin-top: 50px;
+}
+
+/* 8. Seção Contato (Formulário) */
+.contato-form {
+    background-color: var(--cinza-claro);
+}
+
+.contato-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contato-form-grid input,
+.contato-form-grid select,
+.contato-form-grid textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.contato-form-grid textarea {
+    grid-column: 1 / 3;
+    resize: vertical;
+    min-height: 150px;
+}
+
+.submit-btn {
+    grid-column: 1 / 3;
+    width: 100%;
+    border: none !important;
+    cursor: pointer;
+}
+
+
+/* 9. RODAPÉ COMPLETO E PROFISSIONAL */
+.footer {
+    background-color: #820B99;
+    color: #ffffff;
+    padding: 50px 0 0;
+
+    & a {
+        color: #ff6a00;
+    }
+
+    & img {
+        width: 300px;
+    }
+
+    & .containerserv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        background-color: #820B99;
+    }
+    & .contact-item{
+        font-size: 15px;
+    }
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr; /* 4 colunas mais equilibradas: Logo, Links, Contato, CTA */
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-col h3 {
+    font-size: 1.2em;
+    color: var(--branco);
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 2.2;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--laranja-destaque);
+}
+
+.footer-info p {
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+.footer-col p i {
+    margin-right: 10px;
+    color: var(--laranja-destaque);
+    /* Cor de destaque para ícones de contato */
+}
+
+.footer-col.footer-cta-contact h3 {
+    margin-bottom: 10px;
+}
+
+.footer-col.footer-cta-contact p {
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+.footer-cta-btn {
+    width: 100%;
+    /* Reutiliza o estilo .btn-cta.primary, apenas ajustando o padding se necessário */
+}
+.newsletter-btn:hover {
+    background-color: var(--roxo-principal);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+/* ------------------------------------ */
+/* Media Queries (Responsividade) */
+/* ------------------------------------ */
+
+@media (max-width: 900px) {
+    .servicos-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servico-card {
+        max-width: 80%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-wrap: wrap;
+    }
+
+    /* Menu Mobile */
+    .nav {
+        display: none;
+        /* ... (restante do estilo do nav.open) ... */
+    }
+
+    /* ... (Estilos de nav.open e .menu-toggle) ... */
+
+    .vantagens-grid,
+    .contato-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-form-grid input,
+    .contato-form-grid select,
+    .contato-form-grid textarea,
+    .submit-btn {
+        grid-column: 1 / 2;
+    }
+
+    .hero {
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .headline {
+        font-size: 2.5em;
+    }
+
+    .processo-grid-wrapper {
+        border-left: none;
+        /* Remove a linha vertical em mobile */
+        padding-left: 0;
+    }
+
+    .processo-num-container {
+        margin-left: 0;
+        min-width: 40px;
+    }
+
+    .processo-step {
+        align-items: flex-start;
+        border-left: 2px solid var(--laranja-destaque);
+        /* Usa linha do lado do step */
+        padding-left: 15px;
+    }
+
+    .processo-num {
+        margin-left: -27px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-col ul {
+        padding: 0;
+    }
+}
+/* Adicione este bloco no final da sua seção de CSS */
+
+.footer-col.footer-info img {
+    max-width: 250px; /* Reduz o tamanho da logo no footer para harmonia */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.contact-details p i {
+    font-size: 0.9em;
+    position: relative;
+    top: 1px;
+}
+/* ======================================================= */
+/* 7. ESTILOS PARA CARROSSEL DE CLIENTES E PARCEIROS (CORREÇÃO DE LAYOUT) */
+/* ======================================================= */
+
+/* ... seu CSS anterior ... */
+
+/* ======================================================= */
+/* 7. ESTILOS PARA CARROSSEL DE CLIENTES E PARCEIROS (ATUALIZADO) */
+/* ======================================================= */
+
+.carousel-container {
+    overflow: hidden; 
+    width: 100%;
+    margin: 60px auto 0; /* Margem superior para espaçar do título */
+    padding: 0;
+    /* Adiciona uma altura mínima para evitar colapso antes do JS carregar */
+    min-height: 300px; 
+}
+
+.carousel-track {
+    display: flex; 
+    white-space: nowrap; 
+    padding: 0;
+    margin: 0; 
+    align-items: center; /* Centraliza verticalmente os itens no track */
+    animation: none; /* Garante que nenhuma animação CSS interfira */
+}
+
+.carousel-item {
+    flex-shrink: 0;
+    /* *** NOVO PADRÃO DESKTOP: 33.33% (3 logos visíveis) *** */
+    width: 33.33%; 
+    padding: 15px; 
+    box-sizing: border-box; 
+    margin: 0; 
+    text-align: center;
+}
+
+/* ... Mantenha o restante das regras de .cliente-logo-home e .cliente-logo-home img ... */
+
+
+/* Media Queries para Responsividade (ajusta quantos itens são visíveis) */
+@media (max-width: 1200px) {
+    .carousel-item {
+        /* MANTIDO 3 itens visíveis (para telas grandes de laptop) */
+        width: 33.33%; 
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        /* *** MOBILE/TABLET: 2 itens visíveis (100% / 2 = 50%) *** */
+        width: 50%; 
+    }
+}
+
+@media (max-width: 500px) {
+    .carousel-item {
+        /* *** SMARTPHONE: 1 item visível (100% / 1 = 100%) *** */
+        width: 100%; 
+    }
+}
+
+/* *** AQUI ESTÁ A MAIOR MUDANÇA: Proporção e Remoção de Opacidade *** */
+.cliente-logo-home {
+    /* Define uma proporção quadrada para a caixa */
+    width: 100%; 
+    padding-bottom: 100%; /* Truque para manter a proporção 1:1 (quadrado) */
+    position: relative; /* Necessário para posicionar o conteúdo dentro */
+    height: 0; /* Zera a altura para o padding-bottom funcionar */
+
+    background-color: transparent; /* Remove o fundo cinza, se ele existia aqui */
+    border-radius: 8px; /* Mantém bordas arredondadas, se desejar */
+    
+    display: flex; /* Para centralizar a imagem dentro da nova caixa */
+    align-items: center;
+    justify-content: center;
+
+    opacity: 1; /* *** REMOVE O EFEITO APAGADO *** */
+    transition: opacity 0.3s; /* Mantém uma transição para hover, se existir */
+
+    /* Remove qualquer estilo de opacidade que vinha do .cliente-logo-home antigo */
+    /* opacity: 0.6; /* APAGAR SE EXISTIR */
+    /* background-color: var(--cinza-claro); /* APAGAR SE EXISTIR */
+}
+
+/* Estilo para a imagem real dentro da caixa da logo */
+.cliente-logo-home img {
+    position: absolute; /* Permite que a imagem preencha a área do padding-bottom */
+    top: 0;
+    left: 0;
+    width: 100% 300px;
+    height: 100% 300px;
+    object-fit: contain; /* Ajusta a imagem sem cortar */
+    padding: 0; /* Adiciona um padding interno para a logo não encostar nas bordas da caixa */
+    box-sizing: border-box; /* Inclui o padding no tamanho da imagem */
+    filter: none; /* GARANTE QUE NÃO HÁ FILTROS DE CINZA/SÉPIA */
+}
+
+/* Se você tinha um hover de opacidade, pode querer mantê-lo ou remover */
+.cliente-logo-home:hover {
+    opacity: 1; /* Certifica que a opacidade não mude no hover, se não quiser animação */
+}
+
+
+/* Media Queries (ajusta quantos itens são visíveis e padding, se necessário) */
+@media (max-width: 1200px) {
+    .carousel-item {
+        width: 25%; /* 4 itens visíveis */
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 33.33%; /* 3 itens visíveis */
+    }
+}
+
+@media (max-width: 500px) {
+    .carousel-item {
+        width: 50%; /* 2 itens visíveis */
+    }
+}
